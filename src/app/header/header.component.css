@@ -1,0 +1,11 @@
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.mat-badge-medium.mat-badge-overlap.mat-badge-after {
+    margin-right: 0px;
+}
+
+.full-width {
+    width: 100%;
+}

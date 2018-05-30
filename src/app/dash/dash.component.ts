@@ -39,38 +39,13 @@ export class DashComponent {
       id: 6,
       title: 'Nightlife',
       img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/X1UK6NLGRU.jpg'
-    }],
-      i = 0,
-      removeMe = () => {
-        setTimeout(() => {
-          
-          this.pictures.pop();
-          
-          if (0 <= this.pictures.length) {
-            console.log("Again remove me", i, this.pictures);
-            removeMe();
-          } else {
-            console.log("Now Add me", i, this.pictures);
-            i = 0;
-            callmeAgain();
-          }
-        }, 2000);
-      },
-      callmeAgain = () => {
-        setTimeout(() => {
-          this.pictures = this.pictures.concat(data[i]);
-          i++;
-          if (i < data.length) {
-            console.log("Again Add me", i, this.pictures);           
-            callmeAgain();
-          } else {
-            console.log("Now remove me", i, this.pictures);            
-            i = 0;
-            removeMe();
-          }
-        }, 2000);
-      };
-      console.log("First time i", i);
-    callmeAgain();
+    }];
+    this.pictures = this.pictures.concat(data);
+    this.pictures = this.pictures.concat(data);
+
+    this.pictures = this.pictures.concat(data);
+
+    this.pictures = this.pictures.concat(data);
+    
   }
 }

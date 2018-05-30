@@ -1,9 +1,9 @@
-<div fxLayout="row">
-  <mat-card fxFlex="30%" fxFlex.gt-sm="100%" @flyInOut>
-    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-      <span fxFlex="80%">{{pictureData.title}}</span>
-      <mat-icon fxFlex="10%">mode_edit</mat-icon>
-      <mat-icon fxFlex="10%">delete</mat-icon>
+<div>
+  <mat-card @flyInOut>
+    <mat-card-title>
+      <span>{{pictureData.title}}</span>
+      <mat-icon>mode_edit</mat-icon>
+      <mat-icon>delete</mat-icon>
     </mat-card-title>
     <!-- <img mat-card-image [src]="pictureData.img"> -->
   </mat-card>

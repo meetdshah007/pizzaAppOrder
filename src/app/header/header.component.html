@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row *ngIf="!isSearchBar">
+    <span>Pizza Ordering</span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-space"></span>
+
+    <span>
+      <button mat-raised-button color="primary" (click)="isSearchBar=true;">
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-raised-button color="primary" (click)="badgeVisible=!badgeVisible;">
+        <mat-icon matBadge="8" matBadgePosition="above after" matBadgeColor="accent" [matBadgeHidden]="!badgeVisible">shopping_cart</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="isSearchBar">
+    <span class="fill-space">
+      <mat-form-field class="full-width">
+        <mat-label></mat-label>
+        <input matInput placeholder="Search">
+      </mat-form-field>
+    </span>
+    <span>
+      <button mat-raised-button color="primary" (click)="isSearchBar=false;">
+        <mat-icon>close</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
