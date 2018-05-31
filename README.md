@@ -1,6 +1,8 @@
-# PizzaOrderApp
+# PizzaOrderApp  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7. <a href="https://blissful-goldberg-1da1f9.netlify.com/" target="_blank">Demo</a>
+## <a href="https://blissful-goldberg-1da1f9.netlify.com/" target="_blank">Demo</a>
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
 
 ## Development server
