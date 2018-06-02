@@ -1,15 +1,15 @@
 <div>
   <div class="card" @flyInOut>
     <div class="view overlay waves-light" mdbWavesEffect>
-      <img class="img-fluid" [src]="pictureData.img">
+      <img class="img-fluid" [src]="pizzaDetails.image">
     </div>
     <div class="card-body">
       <a class="btn-floating btn-action ml-auto mr-4 primary-color lighten-3 waves-light" mdbWavesEffect (click)='openSnackbar()'>
         <i class="fa fa-plus pl-1 waves-light" mdbWavesEffect></i>
       </a>
-      <h4 class="card-title">{{pictureData.title}}</h4>
-      <p class="card-title">$20.00</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h4 class="card-title">{{pizzaDetails.name}}</h4>
+      <p class="card-title">{{pizzaDetails.price | currency}}</p>
+      <p class="card-text">Ingredients: {{pizzaDetails.ingredients.join(', ')}}</p>
     </div>
   </div>
 </div>

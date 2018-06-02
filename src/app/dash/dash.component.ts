@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'dash',
@@ -6,40 +7,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent {
-  pictures = [];
+  pizzas = [];
+  pizzaSub: any;
 
+  constructor(
+    private http: HttpService
+  ) { }
+
+  /**
+   * On Init lifecycle hook to make the API requests.
+   */
   ngOnInit() {
-    console.log("inside on init");
-    let data = [{
-      id: 1,
-      title: 'A natural view',
-      img: 'https://recipes.timesofindia.com/photo/53110049.cms'
-    },
-    {
-      id: 2,
-      title: 'Newspaper',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/LTLE4QGRVQ.jpg'
-    },
-    {
-      id: 3,
-      title: 'Favourite pizza',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/R926LU1YEA.jpg'
-    },
-    {
-      id: 4,
-      title: 'Abstract design',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/U9PP3KXXY2.jpg'
-    },
-    {
-      id: 5,
-      title: 'Tech',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/NO9CN3QYR3.jpg'
-    },
-    {
-      id: 6,
-      title: 'Nightlife',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/X1UK6NLGRU.jpg'
-    }];
-    this.pictures = this.pictures.concat(data);    
+    this.pizzas = []; //Clear out the Object.
+    if (this.pizzaSub) { //Clear any remaining requests.
+      this.pizzaSub.unsubscribe();
+    }
+    this.pizzaSub = this.http.get('server/pizzas.json').subscribe((resp: any) => {
+      this.pizzas = resp || [];
+    });
+  }
+
+  /**
+   * On destroy lifecycle hook.
+   * Clear any requests is pending.
+   */
+  ngOnDestroy() {
+    if(this.pizzaSub) {
+      this.pizzaSub.unsubscribe();
+    }
   }
 }

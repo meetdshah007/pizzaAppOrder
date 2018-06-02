@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, style, transition, group, animate, state } from '@angular/animations';
 import { MatSnackBar } from '@angular/material';
 
@@ -20,7 +20,8 @@ import { MatSnackBar } from '@angular/material';
   ]
 })
 export class OrderComponent implements OnInit {
-  @Input('data') pictureData: any;
+  @Input('data') pizzaDetails: any;
+  @Output() addToOrder: EventEmitter<any>; 
   constructor(
     public snackBar: MatSnackBar
   ) { }
@@ -30,6 +31,7 @@ export class OrderComponent implements OnInit {
   }
 
   openSnackbar(){
+    this.addToOrder.emit(this.pizzaDetails);
     this.snackBar.open("Item Added Successfully.", null, {
       duration: 2000
     });

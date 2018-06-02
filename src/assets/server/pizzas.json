@@ -1,0 +1,113 @@
+[{
+    "id": 1,
+    "name": "Margharita",
+    "price": 20,
+    "image": "assets/Margherit.jpg",
+    "isVeg": true,
+    "ingredients":["single cheese"]
+}, {
+    "id": 2,
+    "name": "Pizza Vegetaria",
+    "price": 5.99,
+    "image": "assets/Peppy_Paneer.jpg",
+    "isVeg": true,
+    "ingredients":["onions", "red pepper"]
+}, {
+    "id": 3,
+    "name": "Pizza Salami",
+    "price": 10.99,
+    "image": "assets/Mexican_Green_Wave.jpg",
+    "isVeg": true,
+    "ingredients":["onions", "capsicum", "tomatoes", "jalapeno"]
+}, {
+    "id": 4,
+    "name": "Pizza Thunfisch",
+    "price": 7.99,
+    "image": "assets/Veggie_Paradise.jpg",
+    "isVeg": true,
+    "ingredients":["Goldern Corn", "Black Olives", "Capsicum", "Red Paprika"]
+}, {
+    "id": 5,
+    "name": "Aktueller Flyer",
+    "price": 10,
+    "image": "assets/Deluxe_Veggie.jpg",
+    "isVeg": true,
+    "ingredients":["onions", "capsicum", "mushrooms", "paneer"]
+}, {
+    "id": 6,
+    "name": "DOUBLE CHEESE MARGHERITA",
+    "price": 15,
+    "image": "assets/Double_Cheese_Margherita.jpg",
+    "isVeg": true,
+    "ingredients":["Extra cheese"]
+}, {
+    "id": 7,
+    "name": "FARM HOUSE",
+    "price": 17,
+    "image": "assets/Farmhouse.jpg",
+    "isVeg": true,
+    "ingredients":["capsicum", "mushrooms", "tomatoes"]
+}, {
+    "id": 8,
+    "name": "PEPPY PANEER",
+    "price": 14,
+    "image": "assets/Peppy_Paneer.jpg",
+    "isVeg": true,
+    "ingredients":["crunchy paneer", "crisp capsicum", "red pepper"]
+}, {
+    "id": 9,
+    "name": "DELUXE VEGGIE",
+    "price": 12,
+    "image": "assets/Deluxe_Veggie.jpg",
+    "isVeg": true,
+    "ingredients":["onions", "capsicum", "mushrooms", "paneer"]
+}, {
+    "id": 10,
+    "name": "CHEESE N CORN",
+    "price": 15,
+    "image": "assets/Corn_Cheese.jpg",
+    "isVeg": true,
+    "ingredients":["Cheese", "Golden Corn"]
+}, {
+    "id": 11,
+    "name": "PANEER MAKHANI",
+    "price": 11,
+    "image": "assets/Paneer_Makhni.jpg",
+    "isVeg": true,
+    "ingredients":["Paneer", "Capsicum", "Sauce"]
+}, {
+    "id": 12,
+    "name": "FRESH VEGGIE",
+    "price": 6,
+    "image": "assets/Fresh_Veggie.jpg",
+    "isVeg": true,
+    "ingredients":["Onion", "Capsicum"]
+}, {
+    "id": 13,
+    "name": "VEGGIE PARADISE",
+    "price": 10,
+    "image": "assets/Veggie_Paradise.jpg",
+    "isVeg": true,
+    "ingredients":["Goldern Corn", "Black Olives", "Capsicum", "Red Paprika"]
+}, {
+    "id": 14,
+    "name": "PEPPER BARBECUE CHICKEN",
+    "price": 12,
+    "image": "assets/Pepper_Barbeque.jpg",
+    "isVeg": false,
+    "ingredients":["Barbecue Chicken", "Cheese"]
+}, {
+    "id": 15,
+    "name": "CHICKEN TIKKA",
+    "price": 10,
+    "image": "assets/Chicken_Tikka.jpg",
+    "isVeg": false,
+    "ingredients":["Onion", "Sauce", "Makhani"]
+}, {
+    "id": 16,
+    "name": "CHICKEN DOMINATOR",
+    "price": 11,
+    "image": "assets/Dominator.jpg",
+    "isVeg": false,
+    "ingredients":["Double Pepper Barbecue Chicken", "Peri-Peri Chicken", "Chicken Tikka", "Grilled Chicken Rashers"]
+}]
