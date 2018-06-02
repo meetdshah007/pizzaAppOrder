@@ -9,9 +9,11 @@ import { OrderService } from '../order.service';
 })
 export class DashComponent {
 
-  pizzaMaster: any = [];
-  pizzas: any = [];
+  pizzaMaster: any[] = [];
+  pizzas: any[] = [];
+  vegFilter: any[] = [];
   pizzaSub: any;
+  isVegFiltered: boolean = false;
 
   constructor(
     private http: HttpService,
@@ -63,5 +65,24 @@ export class DashComponent {
    */
   filterData(val: string) {
     this.pizzas = this.pizzaMaster.filter(pizza => (String(pizza.name).toLowerCase().indexOf(String(val).toLowerCase()) !== -1));
+    if(this.isVegFiltered) {
+      this.filterToType({checked: this.isVegFiltered});
+    }
+  }
+
+  /**
+   * Filter data based on appearance to type.
+   * @param event Newly updated data.
+   */
+  filterToType(event: any) {
+    if (event.checked) {
+      this.vegFilter = [].concat(this.pizzas);
+      this.isVegFiltered = true;
+      this.pizzas = this.pizzas.filter(pizza => pizza.isVeg === !event.checked);
+    } else {
+      this.isVegFiltered = false;
+      this.pizzas = this.vegFilter.filter(pizza => true);
+      this.vegFilter = [];
+    }
   }
 }

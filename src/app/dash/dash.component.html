@@ -1,3 +1,7 @@
+  <div class="row slider-row">
+    <mat-slide-toggle labelPosition='before' color='primary' (change)='filterToType($event)'>Non-Veg Only</mat-slide-toggle>
+  </div>
+
   <div class="row">
     <app-order 
       *ngFor="let pizza of pizzas"
