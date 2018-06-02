@@ -1,18 +1,15 @@
-<!-- <div class="order-wrapper">
-  <mat-card @flyInOut>
-    <img class="img" [src]="pictureData.img">
-    <mat-card-title>
-      <span>{{pictureData.title}}</span>
-    </mat-card-title>
-    <mat-card-subtitle>100</mat-card-subtitle>
-    <mat-card-content>
-      <div>Ingredients</div>
-    </mat-card-content>
-    <mat-card-actions layout="row" layout-align="start center">
-      <button mat-raised-button color="primary" (click)="openSnackbar()">
-        <mat-icon class="material-icons">add</mat-icon>
-        Add to Cart
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div> -->
+<div>
+  <div class="card" @flyInOut>
+    <div class="view overlay waves-light" mdbWavesEffect>
+      <img class="img-fluid" [src]="pictureData.img">
+    </div>
+    <div class="card-body">
+      <a class="btn-floating btn-action ml-auto mr-4 primary-color lighten-3 waves-light" mdbWavesEffect (click)='openSnackbar()'>
+        <i class="fa fa-plus pl-1 waves-light" mdbWavesEffect></i>
+      </a>
+      <h4 class="card-title">{{pictureData.title}}</h4>
+      <p class="card-title">$20.00</p>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+</div>

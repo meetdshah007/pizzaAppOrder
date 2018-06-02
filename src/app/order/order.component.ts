@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, style, transition, group, animate, state } from '@angular/animations';
-// import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-order',
@@ -22,7 +22,7 @@ import { trigger, style, transition, group, animate, state } from '@angular/anim
 export class OrderComponent implements OnInit {
   @Input('data') pictureData: any;
   constructor(
-    // public snackBar: MatSnackBar
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -30,9 +30,9 @@ export class OrderComponent implements OnInit {
   }
 
   openSnackbar(){
-    // this.snackBar.open("Item Added Successfully.", null, {
-    //   duration: 2000
-    // });
+    this.snackBar.open("Item Added Successfully.", null, {
+      duration: 2000
+    });
   }
 
 }

@@ -1,0 +1,25 @@
+.btn-floating {
+    position: absolute;
+    top: calc(0% - 20px - 6px);
+    right: 0px;
+    border-radius: 50%;
+    padding: 13px;
+    color: white !important;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.card-body {
+    position: relative;
+}
+
+.view.overlay {
+    background: #f2f2f2;
+}
+
+.img-fluid {
+    margin: 0 auto;
+    width: auto;
+    height: 13em;
+}
