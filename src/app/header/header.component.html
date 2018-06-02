@@ -5,7 +5,7 @@
   <links>
     <form class="form-inline waves-light mx-auto" mdbWavesEffect>
       <div class="form-group" *ngIf="allowSearch">
-        <input type="email" class="form-control" placeholder="Search" name="email">
+        <input type="email" class="form-control" placeholder="Search" name="email" (input)="onSearch($event)">
         <i class="fa fa-search"></i>
       </div>
     </form>

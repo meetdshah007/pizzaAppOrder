@@ -8,7 +8,9 @@ import { OrderService } from '../order.service';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent {
-  pizzas = [];
+
+  pizzaMaster: any = [];
+  pizzas: any = [];
   pizzaSub: any;
 
   constructor(
@@ -20,6 +22,7 @@ export class DashComponent {
    * On Init lifecycle hook to make the API requests.
    */
   ngOnInit() {
+    this.pizzaMaster = [];
     this.pizzas = []; //Clear out the Object.
     if (this.pizzaSub) { //Clear any remaining requests.
       this.pizzaSub.unsubscribe();
@@ -30,8 +33,11 @@ export class DashComponent {
         pizza.qty = 0;
         return pizza;
       });
+      this.pizzaMaster = [].concat(resp);
       this.pizzas = resp || [];
     });
+
+    this.http.searchStr.subscribe(val => this.filterData(val));
   }
 
   /**
@@ -49,5 +55,13 @@ export class DashComponent {
    */
   addPizzaToOrder(pizza: any) {
     this.orderService.addOrder(pizza);
+  }
+
+  /**
+   * Filter based on Search.
+   * @param val String Value to search.
+   */
+  filterData(val: string) {
+    this.pizzas = this.pizzaMaster.filter(pizza => (String(pizza.name).toLowerCase().indexOf(String(val).toLowerCase()) !== -1));
   }
 }

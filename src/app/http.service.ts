@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { PlatformLocation } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import { PlatformLocation } from '@angular/common';
 export class HttpService {
   //Single place to register BASEURL so production/distribution URl management can be done.
   baseURL: string = '';
+  searchSource = new BehaviorSubject<string>('');
+  public searchStr = this.searchSource.asObservable();
 
   constructor(
     private http: HttpClient,
@@ -42,5 +45,9 @@ export class HttpService {
    */
   handleError(error: any) {
     console.log("Error ====>", error);
+  }
+
+  searchPizza(val: string) {
+    this.searchSource.next(val);
   }
 }

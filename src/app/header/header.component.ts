@@ -29,9 +29,17 @@ export class HeaderComponent implements OnInit {
    * ngOnInit lifecycle hook subscribe to Orders channel.
    */
   ngOnInit() {
-    this.orderService.orderMsg.subscribe(orderNums =>{
+    this.orderService.orderMsg.subscribe(orderNums => {
       this.activeOrders = orderNums;
     });
+  }
+
+  /**
+   * Helper method tracks the inputs.
+   * @param event $Event triggered object.
+   */
+  onSearch(event: any) {
+    this.http.searchPizza(event.target.value);
   }
 
 }

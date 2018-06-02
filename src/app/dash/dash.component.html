@@ -5,4 +5,8 @@
       class="col-lg-4 col-md-12"
       (addToOrder)="addPizzaToOrder($event)"
     ></app-order>
+    
+    <div class="no-results" *ngIf="!pizzas.length">
+      <h3 class="text-purple text-center"> No Pizzas Found. Try Something else with search?</h3>
+    </div>
   </div>

@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class OrderService {
   orders: any[] = [];
+  discountList: string[] = ['SAVE10', 'SAVE20'];
   ordersSource = new BehaviorSubject(this.orders.length);
   public orderMsg = this.ordersSource.asObservable();
   constructor() { }
