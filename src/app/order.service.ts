@@ -6,7 +6,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class OrderService {
   orders: any[] = [];
-  discountList: string[] = ['SAVE10', 'SAVE20'];
+  discountList: any[] = [{
+    type: 'SAVE10',
+    value: 10
+  }, {
+    type: 'SAVE20',
+    value: 20
+  }];
   ordersSource = new BehaviorSubject(this.orders.length);
   public orderMsg = this.ordersSource.asObservable();
   constructor() { }
@@ -22,6 +28,21 @@ export class OrderService {
     } else {
       pizza.qty++;
       this.orders.push(pizza)
+    }
+    this.updateOrder();
+  }
+
+  /**
+   * 
+   */
+  removeOrder(pizza: any) {
+    if (pizza.qty === 1) {
+      const index = this.orders.findIndex(ord => ord.id === pizza.id);
+      if (index != -1) {
+        this.orders.splice(index, 1);
+      }
+    } else {
+      pizza.qty--;
     }
     this.updateOrder();
   }

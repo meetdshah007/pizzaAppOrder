@@ -1,52 +1,52 @@
-<div class="row">
-  <div class="card m-auto">
+<div class="row" *ngIf="orders.length">
+  <div class="card m-auto" *ngFor="let order of orders">
     <div class="card-body">
       <div class="row">
         <div class="col-xl-3 col-md-4 col-sm-12 img-container">
-          <img class="img-fluid" src="https://recipes.timesofindia.com/photo/53110049.cms">
+          <img class="img-fluid" src="{{order.image}}">
         </div>
         <div class="col-xl-6 col-md-4 col-sm-10">
-          <h4 class="card-title">Delicious Pizza</h4>
+          <h4 class="card-title">{{order.name}}</h4>
           <p class="card-text">
-            <button class="btn btn-outline-primary qty-btn" mdbWavesEffect>
+            <button class="btn btn-outline-primary qty-btn" mdbWavesEffect (click)="addQty(order)">
               <i class="fa fa-plus"></i>
             </button>
-            <span class="qty-value"> 1 </span>
-            <button class="btn btn-outline-primary qty-btn" mdbWavesEffect>
+            <span class="qty-value"> {{order.qty}} </span>
+            <button class="btn btn-outline-primary qty-btn" mdbWavesEffect (click)="removeQty(order)">
               <i class="fa fa-minus"></i>
             </button>
           </p>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+            {{order.ingredients.join(', ')}}
           </p>
         </div>
         <div class="col-xl-2 col-md-2 v-middle">
           <h6>Total</h6>
-          <h4>$20.00</h4>
+          <h4>{{order.price * order.qty | currency}}</h4>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row total-row">
+<div class="row total-row" *ngIf="orders.length">
   <div class="card m-auto">
     <div class="card-body">
       <div class="row">
         <div class="col-12">
           <span class="float-left">Subtotal</span>
-          <span class="float-right">$5000</span>
+          <span class="float-right">{{subTotal | currency}}</span>
         </div>
         <div class="col-12">
           <span class="float-left">Tax1</span>
-          <span class="float-right">$50</span>
+          <span class="float-right">{{(subTotal * tax / 100) | currency}}</span>
         </div>
-        <div class="col-12 text-red">
+        <div class="col-12 text-red" *ngIf="discountApplied">
           <span class="float-left">Discount</span>
-          <span class="float-right">- $50</span>
+          <span class="float-right">- {{discountApplied}}</span>
         </div>
         <div class="col-12 font-weight-bold">
           <span class="float-left">Grand Total</span>
-          <span class="float-right">$5050</span>
+          <span class="float-right">{{grandTotal | currency}}</span>
         </div>
         <div class="col-12 text-center">
           <button class="btn btn-outline-primary qty-btn" mdbWavesEffect data-toggle="modal" data-target="#discount" (click)="discount.show()">Manage Discounts</button>
@@ -57,17 +57,21 @@
   </div>
 </div>
 
+<div class="no-results" *ngIf="!orders.length">
+  <h3 class="text-purple text-center"> No Orders Found. Try Adding something from Home Page?</h3>
+</div>
+
 <div mdbModal #discount="mdb-modal" class="modal fade bottom" id="frameModalBottom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
   <div class="modal-dialog modal-frame modal-bottom" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <div class="md-form">
-          <input mdbInputDirective type="text" class="form-control">
+          <input mdbInputDirective type="text" class="form-control" [(ngModel)]="discountCode">
           <label class="">Discount Code</label>
         </div>
         <div class="row px-4">
-          <button type="button" class="btn btn-primary waves-light" data-dismiss="modal" (click)="discount.hide()" mdbWavesEffect>Apply!</button>
+          <button type="button" class="btn btn-primary waves-light" data-dismiss="modal" (click)="applyDiscount()" mdbWavesEffect>Apply!</button>
         </div>
       </div>
     </div>

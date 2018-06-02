@@ -4,3 +4,14 @@ body { margin: 0; }
 * {
     font-family: 'calibri', 'Times New Roman', Times, serif; 
 }
+
+.no-results{
+    min-height: calc(100vh - 10em);
+    min-width: 100%;
+    display: flex;
+}
+
+.no-results h3{
+    align-self: center;
+    margin: 0 auto;
+}

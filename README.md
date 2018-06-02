@@ -18,7 +18,7 @@ Note: Make sure you are on latest angular cli if not please install `npm install
 2. Pressing + adds Item to Order and No. of Items shown at Top next to Cart button.
 3. Order Page is the Cart where your all items stored you can place order from there.
 4. Removing last quantity results the Order removal. (pressing '-' when qty is 1).
-5. You can apply Discounts to the Order at the moment following codes works only `SAVE10`, `SAVE20` to get 10% & 20% discounts.
+5. You can apply Discounts to the Order at the moment following codes works only `SAVE10`, `SAVE20` to get 10% & 20% discounts. Discount is applicable on the Subtotal+tax. so if 10% discount is applied and subtotal is 100 and 10% is Tax. then counting will be like (110 * 10/100) so, discount should be 11.
 6. Finally Making Place order Success Modal appears and route back to HOME Page.
 
 ## Concepts Implemented in Current APP.

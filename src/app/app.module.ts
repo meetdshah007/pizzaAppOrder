@@ -5,17 +5,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { DashComponent } from './dash/dash.component';
 import { OrderComponent } from './order/order.component';
-import { SummaryComponent } from './summary/summary.component';
 import { HeaderComponent } from './header/header.component';
 import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
-  { path: 'summary', component: SummaryComponent },
   { path: 'cart', component: CartComponent },
   { path: '', component: DashComponent }
 ];
@@ -25,7 +24,6 @@ const appRoutes: Routes = [
     AppComponent,
     DashComponent,
     OrderComponent,
-    SummaryComponent,
     HeaderComponent,
     CartComponent
   ],
@@ -36,7 +34,8 @@ const appRoutes: Routes = [
     MatSlideToggleModule,
     MatSnackBarModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
