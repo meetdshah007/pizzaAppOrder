@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router, RouterEvent } from '@angular/router';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,12 @@ import { Router, RouterEvent } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  badgeVisible: boolean = false;
+  activeOrders: number = 0;
   allowSearch: boolean = true;
   constructor(
     private router: Router,
-    http: HttpService
+    private http: HttpService,
+    private orderService: OrderService
   ) {
     router.events.subscribe((url: RouterEvent) => {
       if (this.router.isActive('cart', false)) {
@@ -23,7 +25,13 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  /**
+   * ngOnInit lifecycle hook subscribe to Orders channel.
+   */
   ngOnInit() {
+    this.orderService.orderMsg.subscribe(orderNums =>{
+      this.activeOrders = orderNums;
+    });
   }
 
 }

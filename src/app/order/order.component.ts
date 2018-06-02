@@ -21,7 +21,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class OrderComponent implements OnInit {
   @Input('data') pizzaDetails: any;
-  @Output() addToOrder: EventEmitter<any>; 
+  @Output() addToOrder = new EventEmitter<any>(); 
   constructor(
     public snackBar: MatSnackBar
   ) { }
