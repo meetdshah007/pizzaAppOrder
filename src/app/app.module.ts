@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { DashComponent } from './dash/dash.component';
 import { OrderComponent } from './order/order.component';
 import { SummaryComponent } from './summary/summary.component';
-import { MaterialModule } from './material.module';
+import { MDBBootstrapModule  } from 'angular-bootstrap-md';
 import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

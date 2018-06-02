@@ -1,10 +1,18 @@
-<div>
+<!-- <div class="order-wrapper">
   <mat-card @flyInOut>
+    <img class="img" [src]="pictureData.img">
     <mat-card-title>
       <span>{{pictureData.title}}</span>
-      <mat-icon>mode_edit</mat-icon>
-      <mat-icon>delete</mat-icon>
     </mat-card-title>
-    <!-- <img mat-card-image [src]="pictureData.img"> -->
+    <mat-card-subtitle>100</mat-card-subtitle>
+    <mat-card-content>
+      <div>Ingredients</div>
+    </mat-card-content>
+    <mat-card-actions layout="row" layout-align="start center">
+      <button mat-raised-button color="primary" (click)="openSnackbar()">
+        <mat-icon class="material-icons">add</mat-icon>
+        Add to Cart
+      </button>
+    </mat-card-actions>
   </mat-card>
-</div>
+</div> -->

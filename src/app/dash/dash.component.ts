@@ -13,7 +13,7 @@ export class DashComponent {
     let data = [{
       id: 1,
       title: 'A natural view',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg'
+      img: 'https://recipes.timesofindia.com/photo/53110049.cms'
     },
     {
       id: 2,
@@ -40,12 +40,6 @@ export class DashComponent {
       title: 'Nightlife',
       img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/X1UK6NLGRU.jpg'
     }];
-    this.pictures = this.pictures.concat(data);
-    this.pictures = this.pictures.concat(data);
-
-    this.pictures = this.pictures.concat(data);
-
-    this.pictures = this.pictures.concat(data);
-    
+    this.pictures = this.pictures.concat(data);    
   }
 }

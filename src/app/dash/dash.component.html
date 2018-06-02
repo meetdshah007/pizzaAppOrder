@@ -1,11 +1,10 @@
-<div class="container">
-  <header>
-    <app-header></app-header>
-  </header>
-  <div class="body">
-    <app-order *ngFor="let picture of pictures" [data]="picture"></app-order>
-  </div>
-  <footer>
-    <p>Pizza Ordering App.</p>
-  </footer>
+<header class="fixed-top">
+  <app-header></app-header>
+</header>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+  <app-order *ngFor="let picture of pictures" [data]="picture" fxFlex="15" fxFlex.xs="55"></app-order>
 </div>
+<footer class="footer-copyright blue py-3 text-center text-white">
+  Made by
+  <a class="text-white" href="https://github.com/meetdshah007/"> Meet Shah </a>
+</footer>
