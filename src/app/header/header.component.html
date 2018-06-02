@@ -1,6 +1,6 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo justify-content-between">
   <logo>
-    <a class="navbar-brand" href="#">Pizza Ordering</a>
+    <a class="navbar-brand" routerLink="/">Pizza Ordering</a>
   </logo>
   <links>
     <form class="form-inline waves-light mx-auto" mdbWavesEffect>
@@ -11,7 +11,7 @@
     </form>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect (click)="badgeVisible =!badgeVisible">
+        <a class="nav-link waves-light" routerLink="/cart" mdbWavesEffect (click)="badgeVisible =!badgeVisible">
           <span class="badge green" *ngIf="badgeVisible">3</span> Cart
         </a>
       </li>

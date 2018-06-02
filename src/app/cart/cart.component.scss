@@ -1,0 +1,27 @@
+.card {
+    width: 100%;
+}
+.qty-btn {
+    padding: 0.4rem 1.14rem;
+}
+
+.qty-value {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+}
+.img-container{
+    background: #f2f2f2;
+    text-align: center;
+}
+.img-fluid{
+    width: auto;
+    height: 11em;
+    margin: 0 auto;
+}
+
+.total-row.row{
+    margin-top: 25px;
+    span {
+        font-size: 1.5rem;
+    }
+}

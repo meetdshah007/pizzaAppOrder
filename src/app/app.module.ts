@@ -11,10 +11,11 @@ import { DashComponent } from './dash/dash.component';
 import { OrderComponent } from './order/order.component';
 import { SummaryComponent } from './summary/summary.component';
 import { HeaderComponent } from './header/header.component';
+import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
-  { path: 'order', component: OrderComponent },
   { path: 'summary', component: SummaryComponent },
+  { path: 'cart', component: CartComponent },
   { path: '', component: DashComponent }
 ];
 
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     DashComponent,
     OrderComponent,
     SummaryComponent,
-    HeaderComponent
+    HeaderComponent,
+    CartComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
