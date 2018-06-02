@@ -5,10 +5,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
 ## Steps to Run the APP
+For Development build run:
 
-`1. git clone https://github.com/meetdshah007/pizzaAppOrder.git`
-`2. cd pizzaOrderApp && npm i`
-`3. ng serve --open`
+1. `git clone https://github.com/meetdshah007/pizzaAppOrder.git`
+2. `cd pizzaOrderApp && npm i`
+3. `ng serve --open`
 
 Note: Make sure you are on latest angular cli if not please install `npm install -g @angular/cli`.
 
@@ -20,13 +21,17 @@ Note: Make sure you are on latest angular cli if not please install `npm install
 4. Removing last quantity results the Order removal. (pressing '-' when qty is 1).
 5. You can apply Discounts to the Order at the moment following codes works only `SAVE10`, `SAVE20` to get 10% & 20% discounts. Discount is applicable on the Subtotal+tax. so if 10% discount is applied and subtotal is 100 and 10% is Tax. then counting will be like (110 * 10/100) so, discount should be 11.
 6. Finally Making Place order Success Modal appears and route back to HOME Page.
+7. Feature functionality filtering based on Veg/Non-Veg.
 
-## Concepts Implemented in Current APP.
-1. Angular Material for component & Angular Bootstrap For Layout.
+## Concepts Implemented in Current challenge.
+1. Latest Angular 6 & Angular Material for component & Angular Bootstrap For Layout.
 2. Ajax Communication.
 3. Routing events Subscription to listen URLs.
-4. Parent & Child Components, Sibling Components Communications using Services & Input/Output Methods.
-5. 
+4. Parent & Child Components Communication using Input/Output Methods, Sibling Components Communications using Behaviour Subject. Modular code to perform task.
+5. GitHub AutoDeploy on Master commit using netlify bot.
+6. Used Javascript Advance Array Methods like: Find, Filter, Map, etc.
+7. Handled Ajax Memory leakage by Unsubscribing the Subs on destroy.
+8. Angular Animations to slightly ease out the Rendering of Components.
 
 
 ## Development server
