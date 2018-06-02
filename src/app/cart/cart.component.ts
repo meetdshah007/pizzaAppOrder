@@ -3,6 +3,8 @@ import { trigger, style, transition, group, animate, state } from '@angular/anim
 import { OrderService } from '../order.service';
 import { MatSnackBar } from '@angular/material';
 import { MDBModalRef } from 'angular-bootstrap-md';
+import { HttpService } from '../http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -13,10 +15,10 @@ import { MDBModalRef } from 'angular-bootstrap-md';
       state('in', style({ transform: 'translateX(0)' })),
       transition('void => *', [
         style({ transform: 'translateX(-100%)' }),
-        animate(100)
+        animate(300)
       ]),
       transition('* => void', [
-        animate(100, style({ transform: 'translateX(100%)' }))
+        animate(300, style({ transform: 'translateX(100%)' }))
       ])
     ])
   ]
@@ -31,8 +33,11 @@ export class CartComponent implements OnInit {
   discountCode: string = '';
 
   @ViewChild('discount') discountEl: MDBModalRef;
+  @ViewChild('orderComplete') orderCompleteEl: any;
 
   constructor(
+    private router: Router,
+    private http: HttpService,
     private orderService: OrderService,
     public snackBar: MatSnackBar
   ) { }
@@ -70,7 +75,7 @@ export class CartComponent implements OnInit {
    */
   calcTotal() {
     this.subTotal = 0;
-    let discountPercent = this.validDiscountCode? this.validDiscountCode.value : 0;
+    let discountPercent = this.validDiscountCode ? this.validDiscountCode.value : 0;
     this.orders.map(order => {
       this.subTotal += (order.price * order.qty);
       return order;
@@ -98,5 +103,23 @@ export class CartComponent implements OnInit {
     this.snackBar.open(msg, null, {
       duration: 3000
     });
+  }
+
+  /**
+   * Order placed event handler to update the server.
+   */
+  placeOrder() {
+    this.orderCompleteEl.show();
+    this.http.get('server/order.json').subscribe(resp => {
+      this.orders = [];
+      this.orderService.orderPlaced();
+    });
+  }
+  
+  /**
+   * Success Modal is hidden. safe to navigate.
+   */
+  onHidden() {
+    this.router.navigateByUrl('');
   }
 }

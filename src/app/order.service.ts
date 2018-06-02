@@ -33,7 +33,8 @@ export class OrderService {
   }
 
   /**
-   * 
+   * Order remove helper method to remove qty of the order.
+   * @param pizza: Object in which qty needs to be removed.
    */
   removeOrder(pizza: any) {
     if (pizza.qty === 1) {
@@ -59,5 +60,13 @@ export class OrderService {
    */
   getCartOrders() {
     return this.orders;
+  }
+
+  /**
+   * Order placed event helper to clear the memory and fresh start.
+   */
+  orderPlaced() {
+    this.orders = [];
+    this.updateOrder();
   }
 }
